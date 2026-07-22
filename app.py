@@ -1,11 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from google import genai
 
-# Initialize Google Gen AI Client
-# Automatically uses GEMINI_API_KEY from environment or secrets.toml
-client = genai.Client(api_key="AQ.Ab8RN6JTvkurAAqVCDItqilT1oypfDE7j4j5DZc3GNPWZCHE5g")
 # ----------------------------
 # Load Model & Files (Cached for Performance)
 # ----------------------------
@@ -78,39 +74,6 @@ with st.form("churn_prediction_form"):
 # ----------------------------
 # Prediction Logic
 # ----------------------------
-def get_ai_recommendation(user_data: dict, prediction: int, churn_prob: float):
-    """Generates retention or engagement strategies using Gemini 2.5 Flash."""
-    status = "HIGH RISK OF CHURN" if prediction == 1 else "LOW RISK (STAYING)"
-    
-    prompt = f"""
-    You are an AI retention specialist for an OTT streaming platform.
-    Analyze the following customer metrics and prediction results:
-    
-    - Churn Status: {status}
-    - Churn Probability: {churn_prob:.1f}%
-    - Age: {user_data['age']}
-    - Subscription Plan: {user_data['plan_name']}
-    - Monthly Charge: ${user_data['Monthly_Charge']}
-    - Primary Device: {user_data['device_name']}
-    - Days Since Last Login: {user_data['days_since_last_login']}
-    - Payment Failures: {user_data['payment_failures']}
-    - Auto Renew Active: {user_data['auto_renew_name']}
-    - Watch Hours (Last 30 Days): {user_data['watch_hours_L30_days']}
-
-    Provide 3 concise, actionable, and hyper-personalized business recommendations 
-    to {'prevent this user from canceling' if prediction == 1 else 'increase user lifetime value and engagement'}.
-    Keep the tone professional and clear. Use bullet points.
-    """
-
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-        )
-        return response.text
-    except Exception as e:
-        return f"Could not generate AI recommendations: {str(e)}"
-    
 if submit_button:
     # Convert string selections into numeric values using mapping dictionaries
     gender = GENDER_MAP[gender_selected]
@@ -160,28 +123,3 @@ if submit_button:
 
     with res_col2:
         st.metric("Churn Probability", f"{probability[1]*100:.2f}%")
-
-        # ----------------------------
-    # Gemini AI Recommendations Block
-    # ----------------------------
-    st.divider()
-    st.subheader("💡 Gemini AI Retention Recommendations")
-
-    raw_user_info = {
-        "age": age,
-        "plan_name": subscription_plan_selected,
-        "Monthly_Charge": monthly_charge,
-        "device_name": primary_device_selected,
-        "days_since_last_login": days_since_last_login,
-        "payment_failures": payment_failures,
-        "auto_renew_name": auto_renew_selected,
-        "watch_hours_L30_days": watch_hours
-    }
-
-    with st.spinner("Analyzing risk factors with Gemini 2.5..."):
-        ai_advice = get_ai_recommendation(
-            user_data=raw_user_info,
-            prediction=prediction,
-            churn_prob=probability[1] * 100
-        )
-        st.info(ai_advice)
