@@ -2,7 +2,7 @@
  * Auto-generated regression suite
  * Source:      Page Scan - Exploratory Tester (browser extension)
  * Target URL:  https://www.boat-lifestyle.com/?utm_source=google&utm_medium=cpc&utm_content=L%26F_boAt_D2C_Search-Brand_boat__Only_Prospecting_India_18%2F02%2F26&gad_source=1&gad_campaignid=23577249767&gbraid=0AAAAADCnhlzrHVmrQcsy4XVuWHmf6A0er&gclid=EAIaIQobChMIw4iekPSMlwMVgS17Bx1u9wXUEAAYASAAEgLCzPD_BwE
- * Generated:   2026-09-26T18:49:49.429Z
+ * Generated:   2026-09-26T19:03:19.037Z
  *
  * These tests codify the checks the extension ran manually during
  * exploratory testing, so regressions get caught automatically on every
