@@ -1,8 +1,8 @@
 /**
  * Auto-generated regression suite
  * Source:      Page Scan - Exploratory Tester (browser extension)
- * Target URL:  https://www.boat-lifestyle.com/?utm_source=google&utm_medium=cpc&utm_content=L%26F_boAt_D2C_Search-Brand_boat__Only_Prospecting_India_18%2F02%2F26&gad_source=1&gad_campaignid=23577249767&gbraid=0AAAAADCnhlzrHVmrQcsy4XVuWHmf6A0er&gclid=EAIaIQobChMIw4iekPSMlwMVgS17Bx1u9wXUEAAYASAAEgLCzPD_BwE
- * Generated:   2026-09-26T19:03:19.037Z
+ * Target URL:  https://github.com/samarthkcse-dev/ott_customer_churn_prediction/tree/master
+ * Generated:   2026-09-26T19:07:14.473Z
  *
  * These tests codify the checks the extension ran manually during
  * exploratory testing, so regressions get caught automatically on every
@@ -12,7 +12,7 @@
  */
 const { test, expect } = require("@playwright/test");
 
-const TARGET_URL = "https://www.boat-lifestyle.com/?utm_source=google&utm_medium=cpc&utm_content=L%26F_boAt_D2C_Search-Brand_boat__Only_Prospecting_India_18%2F02%2F26&gad_source=1&gad_campaignid=23577249767&gbraid=0AAAAADCnhlzrHVmrQcsy4XVuWHmf6A0er&gclid=EAIaIQobChMIw4iekPSMlwMVgS17Bx1u9wXUEAAYASAAEgLCzPD_BwE";
+const TARGET_URL = "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/tree/master";
 
 test.describe("Page Scan regression checks", () => {
   test.beforeEach(async ({ page }) => {
@@ -68,31 +68,31 @@ test.describe("Page Scan regression checks", () => {
 
   test("previously-checked links still respond (not 4xx/5xx)", async ({ request }) => {
     const links = [
-        "https://www.boat-lifestyle.com/?utm_source=google&utm_medium=cpc&utm_content=L%26F_boAt_D2C_Search-Brand_boat__Only_Prospecting_India_18%2F02%2F26&gad_source=1&gad_campaignid=23577249767&gbraid=0AAAAADCnhlzrHVmrQcsy4XVuWHmf6A0er&gclid=EAIaIQobChMIw4iekPSMlwMVgS17Bx1u9wXUEAAYASAAEgLCzPD_BwE#main",
-        "https://www.boat-lifestyle.com/collections/daily-deals",
-        "https://www.boat-lifestyle.com/?utm_source=google&utm_medium=cpc&utm_content=L%26F_boAt_D2C_Search-Brand_boat__Only_Prospecting_India_18%2F02%2F26&gad_source=1&gad_campaignid=23577249767&gbraid=0AAAAADCnhlzrHVmrQcsy4XVuWHmf6A0er&gclid=EAIaIQobChMIw4iekPSMlwMVgS17Bx1u9wXUEAAYASAAEgLCzPD_BwE#",
-        "https://www.boat-lifestyle.com/collections/product-personalization",
-        "https://www.boat-lifestyle.com/pages/bulk-orders",
-        "https://www.boat-lifestyle.com/pages/gifting-with-boat",
-        "https://www.boat-lifestyle.com/",
-        "https://www.boat-lifestyle.com/cart",
-        "https://www.boat-lifestyle.com/pages/payday-sale?utm_source=Brand&utm_medium=Social&utm_campaign=trafficbybrand",
-        "https://www.boat-lifestyle.com/collections",
-        "https://www.boat-lifestyle.com/collections/true-wireless-earbuds",
-        "https://www.boat-lifestyle.com/collections/bluetooth-wireless-headphones",
-        "https://www.boat-lifestyle.com/collections/wireless-earphones",
-        "https://www.boat-lifestyle.com/collections/smart-watches",
-        "https://www.boat-lifestyle.com/collections/wireless-speakers",
-        "https://www.boat-lifestyle.com/collections/home-audio",
-        "https://www.boat-lifestyle.com/collections/party-speakers",
-        "https://www.boat-lifestyle.com/collections/power-banks",
-        "https://www.boat-lifestyle.com/collections/wired-headphones",
-        "https://www.boat-lifestyle.com/collections/dashcams",
-        "https://www.boat-lifestyle.com/collections/best-projector-for-home-cinehead-projectors",
-        "https://www.boat-lifestyle.com/collections/slazer-trimmers-for-men",
-        "https://www.boat-lifestyle.com/collections/wired-earphones",
-        "https://www.boat-lifestyle.com/collections/chargers-and-cables",
-        "https://www.boat-lifestyle.com/collections/nirvana-by-boat"
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/tree/master#start-of-content",
+        "https://github.com/",
+        "https://github.com/samarthkcse-dev",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction",
+        "https://github.com/copilot",
+        "https://github.com/issues",
+        "https://github.com/pulls",
+        "https://github.com/repos",
+        "https://github.com/notifications",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/issues",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/pulls",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/agents?author=samarthkcse-dev",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/actions",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/projects",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/wiki",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/security",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/pulse",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/settings",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/tree/master",
+        "https://github.dev/",
+        "https://github.com/codespaces/new/samarthkcse-dev/ott_customer_churn_prediction?resume=1",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/stargazers",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/forks",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/watchers",
+        "https://github.com/samarthkcse-dev/ott_customer_churn_prediction/branches"
     ];
     for (const link of links) {
       const res = await request.head(link).catch(() => null);
