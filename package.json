@@ -1,0 +1,13 @@
+{
+  "name": "page-scan-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Auto-generated regression tests from Page Scan - Exploratory Tester",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0"
+  }
+}
