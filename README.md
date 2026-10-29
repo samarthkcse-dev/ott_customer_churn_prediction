@@ -1,38 +1,51 @@
-# 🎬 OTT Customer Churn Prediction using Machine Learning
+# 🎬 OTT Customer Churn & Retention Intelligence Suite
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-Multipage-red)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Random%20Forest%20(96.4%25)-orange)
+![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Charts-blueviolet)
+![Gemini AI](https://img.shields.io/badge/GenAI-Google%20Gemini-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📌 Project Overview
 
-OTT platforms like Netflix, JioHotstar, Amazon Prime Video, and Disney+ lose customers due to subscription cancellations (customer churn). This project predicts whether a customer is likely to churn using Machine Learning and provides an easy-to-use web interface for predictions.
+Streaming platforms like Netflix, Disney+, and Amazon Prime Video lose substantial recurring revenue to subscriber cancellations (churn). 
 
-The project demonstrates the complete Data Science workflow, including data preprocessing, analysis, visualization, machine learning model training, and deployment using Streamlit.
-
----
-
-## 🎯 Objectives
-
-- Predict whether a customer will churn.
-- Analyze customer behavior and subscription patterns.
-- Identify important factors affecting churn.
-- Help OTT businesses improve customer retention.
+This enterprise-grade intelligence platform predicts subscriber churn risk with a **96.4% accurate Random Forest model**, provides real-time **interactive "What-If" sensitivity simulations**, visualizes portfolio-level risk with **interactive Plotly analytics**, and generates automated retention campaigns via **Google Gemini GenAI**.
 
 ---
 
-## 🛠️ Technologies Used
+## 🚀 Key Modules (Multipage Application)
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- MySQL
-- Streamlit
-- Joblib
-- Git & GitHub
+* **🏠 Home / Overview Command Center:** Live platform KPI counters (Subscribers, MRR, Platform Churn Rate) and module launchpad.
+* **🎯 1. Real-Time Customer Predictor:**
+  * **Instant Showcase Presets:** 1-click loading for At-Risk Dormant, Loyal Family, Borderline, and Student personas.
+  * **Interactive Speedometer Gauge:** Dynamic color-coded churn risk meter (Safe / Moderate / Critical).
+  * **"What-If" Sensitivity Simulator:** Real-time risk recalculation when testing price discounts, auto-renewal incentives, or watch-time boosts.
+  * **Gemini AI Retention Copilot:** Root cause analysis, business intervention plan, and tailored outreach email/push notification.
+* **📂 2. Batch Cohort Analysis:**
+  * Ingest CSV portfolios or load a pre-configured 150-subscriber demo cohort.
+  * Portfolio risk segmentation donut chart, plan-wise churn breakdowns, and Monthly Revenue at Risk ($MRR).
+  * 1-click enriched CSV download with churn scores and risk categories.
+* **📊 3. Executive Streaming Dashboard:**
+  * Segment filtering by Subscription Plan, Primary Device, and Senior Demographics across 9,476 platform records.
+  * Behavioral analysis (Login inactivity gap vs churn, watch hours distribution).
+  * SQL Query Showcase highlighting business queries and outputs executed on MySQL database.
+* **🧠 4. Model Intelligence & Explainability (XAI):**
+  * Random Forest architecture scorecard (96.4% Accuracy, 0.986 ROC-AUC, 97% Recall).
+  * Global feature importance chart highlighting `days_since_last_login` (51.4%) as the primary attrition driver.
+  * Interactive Confusion Matrix heatmap and benchmark comparison table against Decision Trees and Logistic Regression.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Machine Learning:** Scikit-learn (Random Forest Classifier), Joblib
+* **Generative AI:** Google Gemini API (`google-genai`)
+* **Visualization:** Plotly Graph Objects & Express, Matplotlib
+* **Web Architecture:** Streamlit Multipage Framework
+* **Data Processing:** Pandas, NumPy
+* **Database & SQL:** MySQL
 
 ---
 
@@ -41,165 +54,61 @@ The project demonstrates the complete Data Science workflow, including data prep
 ```
 OTT_Customer_Churn_Prediction/
 │
-├── data/
-│   ├── customers.csv
-│   └── churn_dataset.csv
+├── Home.py                       # Main Executive Command Center
+├── app.py                        # Application entrypoint
+├── app2.py                       # Standalone single-page predictor with AI
 │
-├── notebooks/
-│   └── data_analysis.ipynb
+├── pages/                        # Multipage modules
+│   ├── 1_🎯_Customer_Predictor.py
+│   ├── 2_📂_Batch_Prediction.py
+│   ├── 3_📊_Executive_Dashboard.py
+│   └── 4_🧠_Model_Intelligence.py
 │
-├── model_training.py
-├── app.py
-├── model.pkl
-├── requirements.txt
-├── README.md
+├── utils/                        # Shared utility modules
+│   ├── model_loader.py           # Cached model, dataset loaders & personas
+│   └── ui_components.py          # Custom CSS, Plotly charts & Gemini copilot
 │
-└── images/
-    ├── dashboard.png
-    └── prediction.png
+├── Data/
+│   ├── Cleaned Data/             # Cleaned user dataset (9,476 rows)
+│   └── *.csv                     # Raw platform logs (watch, search, reviews)
+│
+├── models/
+│   ├── cust_churn_model.pkl      # Trained Random Forest Model
+│   ├── encoder.pkl               # Label Encoders
+│   └── features.pkl              # 12 Model Features List
+│
+├── SQL/                          # MySQL Queries
+├── Visualizations/               # Power BI & Matplotlib notebooks
+├── .env.example                  # Environment configuration template
+└── requirements.txt              # Project dependencies
 ```
 
 ---
 
-## ⚙️ Workflow
-
-1. Collect customer dataset.
-2. Clean and preprocess data.
-3. Perform Exploratory Data Analysis (EDA).
-4. Encode categorical features.
-5. Train the Random Forest model.
-6. Save the trained model.
-7. Build a Streamlit web application.
-8. Predict customer churn from user input.
-
----
-
-## 📊 Exploratory Data Analysis (EDA)
-
-- Missing value handling
-- Duplicate removal
-- Churn distribution
-- Subscription plan analysis
-- Device-wise analysis
-- Monthly watch hours analysis
-- Correlation analysis
-
----
-
-## 🤖 Machine Learning Model
-
-**Algorithm:** Random Forest Classifier
-
-**Steps:**
-
-- Feature Selection
-- Train-Test Split
-- Model Training
-- Prediction
-- Model Evaluation
-
----
-
-## 📈 Visualizations
-
-- Churn Distribution
-- Subscription Plan Comparison
-- Device Usage
-- Monthly Watch Hours
-- Correlation Heatmap
-- Feature Importance
-
----
-
-## 💾 SQL Analysis
-
-Example business queries:
-
-- Total customers
-- Total churned customers
-- Churn rate
-- Plan-wise churn
-- Device-wise churn
-- Average watch hours
-- Monthly revenue analysis
-- Region-wise customer distribution
-
----
-
-## 🌐 Streamlit Application
-
-The web application allows users to:
-
-- Enter customer information
-- Predict customer churn
-- Display prediction result instantly
-- Provide a simple and interactive interface
-
----
-
-## 🚀 How to Run
+## ⚙️ Quick Start
 
 ### 1. Install Dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Train the Model
-
-```bash
-python model_training.py
+### 2. Configure Environment (Optional for GenAI)
+Copy `.env.example` to `.env` and add your Google Gemini API key:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
+*(Note: If no API key is set, the app automatically uses intelligent rule-based retention strategies.)*
 
-### 3. Run the Application
-
+### 3. Launch Application
 ```bash
+streamlit run Home.py
+# or
 streamlit run app.py
 ```
 
 ---
 
-## 📊 Sample Prediction
-
-**Input**
-
-| Feature | Value |
-|---|---|
-| Age | 28 |
-| Subscription Plan | Premium |
-| Monthly Watch Hours | 65 |
-| Devices Used | 3 |
-
-**Prediction**
-
-> ✅ Customer will **NOT** Churn
-
----
-
-## 📌 Future Improvements
-
-- AI-powered churn explanation
-- Customer retention recommendations
-- Interactive dashboard
-- Email notification system
-- Cloud deployment
-- Real-time database integration
-
----
-
 ## 👨‍💻 Author
 
-**Samarth Siddharam Kore**
+**Samarth Siddharam Kore**  
 Diploma in Computer Engineering
-
----
-
-## ⭐ Acknowledgements
-
-- Scikit-learn
-- Streamlit
-- Pandas
-- NumPy
-- Matplotlib
-- MySQL
-- Open Source Community

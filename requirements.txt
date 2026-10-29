@@ -1,8 +1,10 @@
-
 streamlit
 pandas
 numpy
 scikit-learn
 matplotlib
 joblib
+plotly
+google-genai
+python-dotenv
 mysql-connector-python
